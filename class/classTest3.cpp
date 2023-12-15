@@ -26,25 +26,20 @@ public:
     {
         return 2 * (length + breadth);
     }
-    void setLength(int l){length = l};
-    void setBreadth(int b){breadth = b};
-    int getLength
+    void setLength(int l){length = l;};
+    void setBreadth(int b){breadth = b;};
+    int getLength() { return length; };
+    int getBreadth() { return breadth; };
+    ~Rectangle()
+    {
+        cout << "Destructor";
+    }
 };
 
 int main()
 {
-    Rectangle r;
+    Rectangle r(10, 5);
 
-    int l, b;
-    cout << "please input the length and breadth: ";
-    cin >> l >> b;
-
-    r.initialise(l, b);
-
-    int RA = r.area();
-    int RP = r.perimeter();
-    cout << "area: " << RA << endl
-         << "perimeter: " << RP << endl;
-
+    cout << "Area: " << r.area() << endl;
     return 0;
 }
