@@ -15,26 +15,32 @@ public:
     }
     Rectangle(int l, int b)
     {
-        length = l;
-        breadth = b;
+        this->length = l;
+        this->breadth = b;
     }
-    int area()
-    {
-        return length * breadth;
-    }
-    int perimeter()
-    {
-        return 2 * (length + breadth);
-    }
-    void setLength(int l){length = l;};
-    void setBreadth(int b){breadth = b;};
-    int getLength() { return length; };
-    int getBreadth() { return breadth; };
+    int area();
+    int perimeter();
+    void setBreadth(int l);
+    void setLength(int l);
+    int getBreadth();
+    int getLength();
     ~Rectangle()
     {
         cout << "Destructor";
     }
 };
+int Rectangle::area()
+{
+    return length * breadth;
+}
+int Rectangle::perimeter()
+{
+    return 2 * (length + breadth);
+}
+void Rectangle::setLength(int l) { length = l; };
+void Rectangle::setBreadth(int b) { breadth = b; };
+int Rectangle::getLength() { return length; };
+int Rectangle::getBreadth() { return breadth; };
 
 int main()
 {
