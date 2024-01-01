@@ -72,7 +72,24 @@ int RBinarySearch(int a[], int l, int h, int key)
         }
     }
 }
-int binarySearch(struct Array arr, int key)
+
+void Swap(int *a, int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void Reserve(struct Array *arr)
+{
+    int i, j;
+    for (i = 0, j = arr->length - 1; i < j; i++, j--)
+    {
+        Swap(&arr->A[i], &arr->A[j]);
+    }
+}
+int BinarySearch(struct Array arr, int key)
 {
     int l, mid, h;
     l = 0;
@@ -97,7 +114,8 @@ int binarySearch(struct Array arr, int key)
     }
     return 0;
 }
-int linearSearch(struct Array arr, int x)
+
+int LinearSearch(struct Array arr, int x)
 {
     for (int i = 0; i < arr.length; i++)
     {
@@ -114,9 +132,10 @@ int main()
     struct Array arr = {{2, 3, 4, 5, 7}, 10, 5};
     // Append(&arr, 10);
     // Delete(&arr, 0);
+    Reserve(&arr);
     Display(arr);
     // int a = linearSearch(arr, 3);
-    int a = binarySearch(arr, 7);
-    cout << a << endl;
+    // int a = binarySearch(arr, 7);
+    // cout << a << endl;
     return 0;
 }
