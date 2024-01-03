@@ -163,6 +163,7 @@ struct Array* Merge(struct Array *arr1, struct Array *arr2)
     return arr3;
 }
 
+
 int main()
 {
     // struct Array arr = {{2, 3, 4, 5, 7}, 10, 5};
