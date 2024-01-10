@@ -10,6 +10,6 @@ int main()
         s[i] = s[i] - 32;
         cout << s[i] << endl;
     }
-
+    
     return 0;
 }

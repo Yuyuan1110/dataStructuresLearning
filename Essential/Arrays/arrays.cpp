@@ -11,5 +11,7 @@ int main()
         cout << i << endl;
     }
 
+    int *p = A+1;
+    cout << (*p)--;
     return 0;
 }
