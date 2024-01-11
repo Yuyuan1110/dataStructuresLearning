@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-class Matrix
+class Diagonal
 {
 private:
     int *A;
     int n;
 
 public:
-    Matrix()
+    Diagonal()
     {
         A = new int[10];
         n = 5;
     }
-    Matrix(int n)
+    Diagonal(int n)
     {
         if (n > 0)
         {
@@ -21,7 +21,7 @@ public:
             this->n = n;
         }
     }
-    ~Matrix()
+    ~Diagonal()
     {
         delete[] A;
     }
@@ -30,7 +30,7 @@ public:
     void Display();
 };
 
-void Matrix::Set(int i, int j, int x)
+void Diagonal::Set(int i, int j, int x)
 {
     if (i > 0 && i <= this->n && j > 0 && j <= this->n)
     {
@@ -41,7 +41,7 @@ void Matrix::Set(int i, int j, int x)
     }
 }
 
-int Matrix::Get(int i, int j){
+int Diagonal::Get(int i, int j){
     if (i > 0 && i <= this->n && j > 0 && j <= this->n)
     {
         if (i == j)
@@ -53,9 +53,10 @@ int Matrix::Get(int i, int j){
             return 0;
         }
     }
+    return -1;
 }
 
-void Matrix::Display(){
+void Diagonal::Display(){
     int i, j;
     for (i = 0; i < this->n; i++)
     {
@@ -76,12 +77,12 @@ void Matrix::Display(){
 
 int main()
 {
-    struct Matrix m(4);
+    class Diagonal d(4);
     
-    m.Set(1, 1, 5);
-    m.Set(2, 2, 8);
-    m.Set(3, 3, 9);
-    m.Set(4, 4, 12);
-    m.Display();
+    d.Set(1, 1, 5);
+    d.Set(2, 2, 8);
+    d.Set(3, 3, 9);
+    d.Set(4, 4, 12);
+    d.Display();
     return 0;
 }
